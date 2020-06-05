@@ -1,142 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0,user-scalable=no"
+        />
+        <title>推箱子游戏哟</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tool</title>
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-
-        #operate,
-        #game {
-            width: 560px;
-            height: 560px;
-            margin: 0 auto;
-        }
-
-        #game {
-
-            position: relative;
-            overflow: hidden;
-            background-color: #00c55d;
-        }
-
-        #game>img {
-            display: none
-        }
-
-        canvas {
-            position: absolute;
-            right: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        #menu {
-            width: 200px;
-            height: 100px;
-            background-color: rgba(0, 211, 225, 0.5);
-            border-radius: 20px;
-            position: absolute;
-            bottom: 10px;
-            right: -180px;
-            box-shadow: aliceblue 0 0 10px;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -ms-transition: all 1s;
-            -o-transition: all 1s;
-            transition: all 1s;
-        }
-
-        #menu:hover {
-            width: 380px;
-        }
-
-        #menu>input {
-            margin-top: 20px;
-            margin-left: 25px;
-            width: 150px;
-        }
-
-        #text {
-            width: 20px;
-            height: 100%;
-            color: white;
-            position: absolute;
-            line-height: 50px;
-        }
-
-        button {
-            margin-bottom: 10px;
-            background-color: transparent;
-            outline: none;
-            border: 1px solid #ccc;
-            color: #3684be;
-        }
-
-        button {
-            color: #3684be;
-        }
-
-        .deration-icon {
-            display: inline-block;
-            background: #5a65f1;
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 50%;
-            box-shadow: inset 0 5px 10px hsla(0, 0%, 100%, .8);
-            text-align: center;
-        }
-
-        .left-icon {
-            margin-right: 30px;
-        }
-
-        @media screen and (max-width: 560px) {
+            #operate,
             #game {
-                width: 100vw;
-                height: 100vw;
+                width: 560px;
+                height: 560px;
                 margin: 0 auto;
+            }
+
+            #game {
                 position: relative;
                 overflow: hidden;
+                background-color: #00c55d;
             }
-        }
-    </style>
-</head>
 
-<body>
-    <h2 style="text-align: center;">推箱子游戏</h2>
-    <h3 style="text-align: center;">当前关卡：<span>1</span></h3>
+            #game > img {
+                display: none;
+            }
 
-    <div id="game" class="game-container">
-        <canvas id="canvas1" width="560" height="560"></canvas>
-        <canvas id="canvas2" width="560" height="560"></canvas>
-    </div>
-    <div style="text-align: center;margin-top: 10px" id="operate">
-        <div style="display: inline-block;width: 50%;">
-            <div>
-                <i class="deration-icon" id="top-icon">上</i>
+            canvas {
+                position: absolute;
+                right: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            #menu {
+                width: 200px;
+                height: 100px;
+                background-color: rgba(0, 211, 225, 0.5);
+                border-radius: 20px;
+                position: absolute;
+                bottom: 10px;
+                right: -180px;
+                box-shadow: aliceblue 0 0 10px;
+                -webkit-transition: all 1s;
+                -moz-transition: all 1s;
+                -ms-transition: all 1s;
+                -o-transition: all 1s;
+                transition: all 1s;
+            }
+
+            #menu:hover {
+                width: 380px;
+            }
+
+            #menu > input {
+                margin-top: 20px;
+                margin-left: 25px;
+                width: 150px;
+            }
+
+            #text {
+                width: 20px;
+                height: 100%;
+                color: white;
+                position: absolute;
+                line-height: 50px;
+            }
+
+            button {
+                margin-bottom: 10px;
+                background-color: transparent;
+                outline: none;
+                border: 1px solid #ccc;
+                color: #3684be;
+            }
+
+            button {
+                color: #3684be;
+            }
+
+            .deration-icon {
+                display: inline-block;
+                background: #5a65f1;
+                color: #fff;
+                width: 60px;
+                height: 60px;
+                line-height: 50px;
+                border-radius: 50%;
+                box-shadow: inset 0 5px 10px hsla(0, 0%, 100%, 0.8);
+                text-align: center;
+            }
+
+            .left-icon {
+                margin-right: 40px;
+            }
+
+            @media screen and (max-width: 560px) {
+                #game,
+                #operate {
+                    width: 100vw;
+                    height: 100vw;
+                    margin: 0 auto;
+                    position: relative;
+                    overflow: hidden;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2 style="text-align: center;">推箱子游戏</h2>
+        <h3 style="text-align: center;">当前关卡：<span>1</span></h3>
+
+        <div id="game" class="game-container">
+            <canvas id="canvas1" width="560" height="560"></canvas>
+            <canvas id="canvas2" width="560" height="560"></canvas>
+        </div>
+        <div style="text-align: center; margin-top: 10px;" id="operate">
+            <div style="display: inline-block; width: 50%;">
+                <div>
+                    <i class="deration-icon" id="top-icon">上</i>
+                </div>
+                <div>
+                    <i class="deration-icon left-icon" id="left-icon">左</i>
+                    <i class="deration-icon" id="right-icon">右</i>
+                </div>
+                <div>
+                    <i class="deration-icon" id="down-icon">下</i>
+                </div>
             </div>
-            <div>
-                <i class="deration-icon left-icon" id="left-icon">左</i>
-                <i class="deration-icon" id="right-icon">右</i>
-            </div>
-            <div>
-                <i class="deration-icon" id="down-icon">下</i>
+            <div style="display: inline-block; width: 40%;">
+                <button id="prev">上一关</button>
+                <button id="replay">重玩</button>
+                <button id="next">下一关</button>
             </div>
         </div>
-        <div style="display: inline-block;width: 40%;">
-            <button id="prev">上一关</button>
-            <button id="replay">重玩</button>
-            <button id="next">下一关</button>
-        </div>
-    </div>
-<script type="text/javascript" src="Tool.umd.min.js"></script></body>
-
+    <script type="text/javascript" src="Tool.umd.min.js"></script></body>
 </html>
